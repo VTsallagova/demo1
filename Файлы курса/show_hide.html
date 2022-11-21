@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1 {
+            background-color: #AAAAAA;
+        }
+
+        .comment {
+            font-style: italic;
+            margin-left: 24px;
+            font-size: 0.8em;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function show_hide(n) {
+            if (document.getElementById("btn" + n).innerText == "-") {
+                document.getElementById("div"+ n).style.display = "none"; //Скрываем абзацы заголовка Части 1
+                document.getElementById("btn"+ n).innerText = "+"
+            }
+            else {
+                document.getElementById("div"+ n).style.display = ""; //Чтобы переключался + и -
+                document.getElementById("btn"+ n).innerText = "-"
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Документ</h1>
+    <h2>
+        <button id="btn1" onclick="show_hide(1);">-</button>
+        Часть 1
+    </h2>
+    <div id="div1">
+        <p>111 111 111</p>
+        <p>111 111 111</p>
+        <p>111 111 111</p>
+        <p>111 111 111</p>
+        <p class="comment">Примечание 1</p>
+    </div>
+    <h2>
+        <button id="btn2" onclick="show_hide(2);">-</button>
+        Часть 2
+    </h2>
+    <div id="div2">
+        <p>222 222 222</p>
+        <p class="comment">Примечание 2</p>
+        <p>222 222 222</p>
+        <p>222 222 222</p>
+        <p>222 222 222</p>
+    </div>
+    <h3>
+        <button id="btn3" onclick="show_hide(3);">-</button>
+        Часть 3
+    </h3>
+    <div id="div3">
+        <p>333 333 333</p>
+        <p class="comment">Примечание 3</p>
+        <p>333 333 333</p>
+        <p>333 333 333</p>
+        <p>333 333 333</p>
+    </div>
+
+</body>
+</html>

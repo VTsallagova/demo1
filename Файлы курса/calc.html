@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Калькулятор</title>
+    <style>
+        input, button {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        input {
+            width: 120px;
+        }
+
+        button {
+            width: 62px;
+        }
+
+        .pressed {
+            background-color: aqua;
+        }
+    </style>
+  
+    <script>
+        function plus() {
+            var x = parseInt(document.getElementById("txtX").value);
+            var y = parseInt(document.getElementById("txtY").value);
+            var z = x + y;
+            document.getElementById("txtZ").value = z;
+            document.getElementById("btnPlus").className = "pressed";
+            document.getElementById("btnMinus").className = "";
+
+        }
+
+        function minus() {
+            var x = parseInt(document.getElementById("txtX").value);
+            var y = parseInt(document.getElementById("txtY").value);
+            var z = x - y;
+            document.getElementById("txtZ").value = z;
+            document.getElementById("btnMinus").className = "pressed";
+            document.getElementById("btnPlus").className = "";
+        }
+    </script>
+</head>
+<body>
+    <h1>Калькулятор</h1>
+    <input type="text" id="txtX" value="0" /> <br />
+    <input type="text" id="txtY" value="0" /> <br />
+    <button id="btnPlus" onclick="plus();">+</button>
+    <button id="btnMinus" onclick="minus();">-</button> <br />
+    <input type="text" id="txtZ" value="0" />
+</body>
+</html>

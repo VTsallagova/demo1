@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Люди</title>
+    <script>
+        function all_people() {
+            var url = "api/people.php";
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", url, false);
+            xhr.send();
+            var peopleJson = xhr.responseText;
+            //alert(peopleJson);
+            //console.log(peopleJson);
+            var people = JSON.parse(peopleJson);
+            // console.log(people);
+            var out ="";
+            for(var i = 0; i < people.length; i++) {
+                var person = people[i];
+                out += person.lastName + ", " 
+                        + person.firstName + " - " 
+                        + person.group + "<br />"
+                console.log(out);
+                // console.log(people[i].firstName);
+            }
+            document.getElementById("display").innerHTML = out;
+        }
+
+        function filtered_people() {
+            console.log(document.getElementById("letters").value);
+            var url = "api/people.php?letters=" 
+                         + document.getElementById("letters").value;
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", url, false);
+            xhr.send();
+            var peopleJson = xhr.responseText;
+            //alert(peopleJson);
+            //console.log(peopleJson);
+            var people = JSON.parse(peopleJson);
+            // console.log(people);
+            var out ="";
+            for(var i = 0; i < people.length; i++) {
+                var person = people[i];
+                out += person.lastName + ", " 
+                        + person.firstName + " - " 
+                        + person.group + "<br />"
+                console.log(out);
+                // console.log(people[i].firstName);
+            }
+            document.getElementById("display").innerHTML = out;
+        }
+    </script>
+</head>
+<body onload="all_people();">
+    <h1>Список людей</h1>
+    <input type="text" id="letters" oninput="filtered_people();"/>
+    <!-- <button>Получить список</button> -->
+    <div id = "display"></div>
+</body>
+</html>

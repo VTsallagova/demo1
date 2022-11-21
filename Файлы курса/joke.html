@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    </style>
+    <meta charset="UTF-8">
+    <title>Joke</title>
+    <script>
+        function runaway() {
+            if (document.getElementById("btn").style.marginTop != "300px") {
+                document.getElementById("btn").style.marginTop = "300px";
+            }
+            else
+                document.getElementById("btn").style.marginTop = "30px";
+        }
+    </script>
+</head>
+<body>
+    <button id="btn"
+        style="margin-top: 10px;"
+        onmouseover="runaway();"
+    >Щёлкни меня и будет тебе счастье!</button>
+</body>
+</html>
+
+<div id="calculator">
+    <form>
+      <input type="text" id="display" enabled><br>
+      <input type="button" value="C" id="keys" onclick="addToScreen('c')">
+      <input type="button" value="<--" id="keys" onclick="backSpace()">
+      <input type="button" value="X^3" id="keys" onclick="power('3')">
+      <input type="button" value="+" id="keys" onclick="addToScreen('+')"><br>
+      <input type="button" value="7" id="keys" onclick="addToScreen('7')">
+      <input type="button" value="8" id="keys" onclick="addToScreen('8')">
+      <input type="button" value="9" id="keys" onclick="addToScreen('9')">
+      <input type="button" value="-" id="keys" onclick="addToScreen('-')"><br>
+      <input type="button" value="4" id="keys" onclick="addToScreen('4')">
+      <input type="button" value="5" id="keys" onclick="addToScreen('5')">    
+      <input type="button" value="6" id="keys" onclick="addToScreen('6')">
+      <input type="button" value="*" id="keys" onclick="addToScreen('*')"><br>
+      <input type="button" value="1" id="keys" onclick="addToScreen('1')">
+      <input type="button" value="2" id="keys" onclick="addToScreen('2')">
+      <input type="button" value="3" id="keys" onclick="addToScreen('3')">
+      <input type="button" value="/" id="keys" onclick="addToScreen('/')"><br>
+      <input type="button" value="0" id="keys" onclick="addToScreen('0')">
+      <input type="button" value="." id="keys" onclick="addToScreen('.')">
+      <input type="button" value="=" id="equal" onclick="answer()">
+    </form>
+  </div>
+</body>
+</html>

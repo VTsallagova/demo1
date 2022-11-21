@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Demo</title>
+        <link href="styles/main.css" rel="stylesheet" />
+        <style>
+            /*
+            h2 {
+                color: rgb(5, 27, 34); 
+                background-color: lightblue;
+                text-align: center;
+                width: 50%;
+            }
+            */
+        </style>
+
+        <script>
+            function sayHello() {
+                //alert("Hello, world!");
+                document.getElementById("hdr1").innerText = "Hello, world!"; //Если мы хотим сделать что-то с элементом нашего интерфеса
+                document.getElementById("hdr1").style.color = "blue"; //Меняем текст заголовка на голубой при нажатии кнопки
+                document.getElementById("hdr1").style.backgroundColor = "white"; //Меняем фон заголовка на белый при нажатии кнопки
+                //При двойном клике на кнопку сделать так, чтобы панда показалась снова. Надо использовать ветвление if
+                if (document.getElementById("imgPanda").style.display != "none") {
+                    document.getElementById("imgPanda").style.display = "none"; //Скрыли кота при нажатии кнопки
+                    document.getElementById("btn1").innerHTML = "Показать панду"; // Хочу поменять текст на кнопке, чтобы к ней обратится я создала id="btn1"
+                }
+                else{
+                    document.getElementById("imgPanda").style.display = ""; //Скрыли кота при нажатии кнопки
+                    document.getElementById("btn1").innerHTML = "Click me"; // Хочу поменять текст на кнопке, чтобы к ней обратится я создала id="btn1"
+                }
+                                
+            }
+
+            function scream() {
+                document.getElementById("hdr1").innerText = "Ррр!"; //При наведении мышью выдаёт Ррр!
+            }
+
+            function silence() {
+                document.getElementById("hdr1").innerText = "Hello, world!"; //При убирании мыши выдаёт Hello, world!
+            }
+
+        </script>
+
+    </head>
+    <body>
+        <!-- Это комментарий-->
+        <h1 id="hdr1">Документ</h1>
+        <button id="btn1" onclick="sayHello();"> Click me!</button>
+        <h2> Часть 1</h2>
+        <p>
+            lala <br />
+            bubu
+            00
+        </p>
+        <p>lala bubu 11</p>
+        <p>lala bubu 22</p>
+        <h2> Часть 2</h2> 
+        <a href="htttp://yand.dyndns.org/mephi2022_04">Сайт учебноё группы</a>
+        <p></p> 
+        <img id="imgPanda" 
+            src="images/1655674256_22-kartinkin-net-p-multyashnaya-panda-kartinki-22.png"
+            style="width: 200px;" 
+            onmouseover="scream();"
+            onmouseleave="silence();"/>
+    </body>
+<html>
